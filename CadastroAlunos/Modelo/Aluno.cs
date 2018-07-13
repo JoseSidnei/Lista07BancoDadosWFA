@@ -14,7 +14,8 @@ namespace CadastroAlunos.Modelo
         public double Nota01 { get; set; }
         public double Nota02 { get; set; }
         public double Nota03 { get; set; }
-        public byte Frequancia { get; set; }
+        public byte Frequencia { get; set; }
+        public double Media { get; set; }
 
     }
 }

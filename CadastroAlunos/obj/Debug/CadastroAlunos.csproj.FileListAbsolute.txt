@@ -8,3 +8,13 @@ C:\Users\104895\Documents\Visual Studio 2013\Projects\CadastroAlunos\bin\Debug\C
 C:\Users\104895\Documents\Visual Studio 2013\Projects\CadastroAlunos\bin\Debug\CadastroAlunos.pdb
 C:\Users\104895\Documents\Visual Studio 2013\Projects\CadastroAlunos\obj\Debug\CadastroAlunos.exe
 C:\Users\104895\Documents\Visual Studio 2013\Projects\CadastroAlunos\obj\Debug\CadastroAlunos.pdb
+C:\Users\104895\Documents\GitHub\Lista07BancoDadosWFA\CadastroAlunos\bin\Debug\CadastroAlunos.exe.config
+C:\Users\104895\Documents\GitHub\Lista07BancoDadosWFA\CadastroAlunos\obj\Debug\CadastroAlunos.exe
+C:\Users\104895\Documents\GitHub\Lista07BancoDadosWFA\CadastroAlunos\obj\Debug\CadastroAlunos.pdb
+C:\Users\104895\Documents\GitHub\Lista07BancoDadosWFA\CadastroAlunos\bin\Debug\CadastroAlunos.exe
+C:\Users\104895\Documents\GitHub\Lista07BancoDadosWFA\CadastroAlunos\bin\Debug\CadastroAlunos.pdb
+C:\Users\104895\Documents\GitHub\Lista07BancoDadosWFA\CadastroAlunos\obj\Debug\CadastroAlunos.csprojResolveAssemblyReference.cache
+C:\Users\104895\Documents\GitHub\Lista07BancoDadosWFA\CadastroAlunos\obj\Debug\CadastroAlunos.CadastroAlunos.resources
+C:\Users\104895\Documents\GitHub\Lista07BancoDadosWFA\CadastroAlunos\obj\Debug\CadastroAlunos.ListaAlunos.resources
+C:\Users\104895\Documents\GitHub\Lista07BancoDadosWFA\CadastroAlunos\obj\Debug\CadastroAlunos.Properties.Resources.resources
+C:\Users\104895\Documents\GitHub\Lista07BancoDadosWFA\CadastroAlunos\obj\Debug\CadastroAlunos.csproj.GenerateResource.Cache
