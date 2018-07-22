@@ -49,6 +49,8 @@
             this.lblM = new System.Windows.Forms.Label();
             this.lblSituacaoAluno = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
+            this.lblFrequencia = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.nudFrequencia)).BeginInit();
             this.SuspendLayout();
             // 
@@ -211,12 +213,13 @@
             this.nudFrequencia.Name = "nudFrequencia";
             this.nudFrequencia.Size = new System.Drawing.Size(300, 20);
             this.nudFrequencia.TabIndex = 3;
+            this.nudFrequencia.Leave += new System.EventHandler(this.nudFrequencia_Leave);
             // 
             // lblMedia
             // 
             this.lblMedia.AutoSize = true;
             this.lblMedia.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMedia.Location = new System.Drawing.Point(578, 273);
+            this.lblMedia.Location = new System.Drawing.Point(578, 268);
             this.lblMedia.Name = "lblMedia";
             this.lblMedia.Size = new System.Drawing.Size(25, 25);
             this.lblMedia.TabIndex = 125;
@@ -226,7 +229,7 @@
             // 
             this.lblM.AutoSize = true;
             this.lblM.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblM.Location = new System.Drawing.Point(482, 273);
+            this.lblM.Location = new System.Drawing.Point(482, 268);
             this.lblM.Name = "lblM";
             this.lblM.Size = new System.Drawing.Size(90, 25);
             this.lblM.TabIndex = 124;
@@ -236,7 +239,7 @@
             // 
             this.lblSituacaoAluno.AutoSize = true;
             this.lblSituacaoAluno.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSituacaoAluno.Location = new System.Drawing.Point(704, 298);
+            this.lblSituacaoAluno.Location = new System.Drawing.Point(704, 330);
             this.lblSituacaoAluno.Name = "lblSituacaoAluno";
             this.lblSituacaoAluno.Size = new System.Drawing.Size(25, 25);
             this.lblSituacaoAluno.TabIndex = 126;
@@ -246,17 +249,39 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(482, 298);
+            this.label10.Location = new System.Drawing.Point(482, 330);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(216, 25);
             this.label10.TabIndex = 127;
             this.label10.Text = "Situação do aluno :";
+            // 
+            // lblFrequencia
+            // 
+            this.lblFrequencia.AutoSize = true;
+            this.lblFrequencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFrequencia.Location = new System.Drawing.Point(625, 298);
+            this.lblFrequencia.Name = "lblFrequencia";
+            this.lblFrequencia.Size = new System.Drawing.Size(25, 25);
+            this.lblFrequencia.TabIndex = 129;
+            this.lblFrequencia.Text = "0";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(482, 298);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(137, 25);
+            this.label12.TabIndex = 128;
+            this.label12.Text = "Frequência:";
             // 
             // CadastroAlunos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(847, 456);
+            this.Controls.Add(this.lblFrequencia);
+            this.Controls.Add(this.label12);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.lblSituacaoAluno);
             this.Controls.Add(this.lblMedia);
@@ -310,6 +335,8 @@
         private System.Windows.Forms.Label lblM;
         private System.Windows.Forms.Label lblSituacaoAluno;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label lblFrequencia;
+        private System.Windows.Forms.Label label12;
     }
 }
 

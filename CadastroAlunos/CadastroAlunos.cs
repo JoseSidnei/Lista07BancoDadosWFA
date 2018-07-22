@@ -35,16 +35,155 @@ namespace CadastroAlunos
             txtNome.Text = aluno.Nome;
             txtCodigoMatricula.Text = aluno.CodigoMatricula;
             nudFrequencia.Value = aluno.Frequencia;
-            txtNota1.Text = aluno.Nota01.ToString();
-            txtNota2.Text = aluno.Nota02.ToString();
-            txtNota3.Text = aluno.Nota03.ToString();
+            if (aluno.Nota01 < 10)
+            {
+                txtNota1.Text = "0" + aluno.Nota01.ToString();
+            }
+            else
+            {
+                txtNota1.Text = aluno.Nota01.ToString() + "00";
+            }
+
+            if (aluno.Nota02 < 10)
+            {
+                txtNota2.Text = "0" + aluno.Nota02.ToString();
+            }
+            else
+            {
+                txtNota2.Text = aluno.Nota02.ToString() + "00";
+            }
+
+            if (aluno.Nota03 < 10)
+            {
+                txtNota3.Text = "0" + aluno.Nota03.ToString();
+            }
+            else
+            {
+                txtNota3.Text = aluno.Nota03.ToString() + "00";
+            }
             lblMedia.Text = aluno.Media.ToString();
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
             Aluno aluno = new Aluno();
+
+            if (string.IsNullOrEmpty(txtCodigoMatricula.Text))
+            {
+                MessageBox.Show("O código de matrícula do aluno deve ser preencido");
+                txtCodigoMatricula.Focus();
+                return;
+            }
+            if (txtCodigoMatricula.Text.Length < 3)
+            {
+                MessageBox.Show("O código de matrícula do aluno deve conter pelo menos 3 caracteres");
+                txtCodigoMatricula.Focus();
+                return;
+            }
+            if (txtCodigoMatricula.Text.Length > 150)
+            {
+                MessageBox.Show("O código de matrícula do aluno deve conter no máximo 150 caracteres");
+                txtCodigoMatricula.Focus();
+                return;
+            }
+
             
+            if (string.IsNullOrEmpty(txtNome.Text))
+            {
+                MessageBox.Show("O nome do aluno deve ser preencido");
+                txtNome.Focus();
+                return;
+            }
+            if (txtNome.Text.Length < 3)
+            {
+                MessageBox.Show("O nome do aluno deve conter pelo menos 3 caracteres");
+                txtNome.Focus();
+                return;
+            }
+            if (txtNome.Text.Length > 150)
+            {
+                MessageBox.Show("O nome do aluno deve conter no máximo 150 caracteres");
+                txtNome.Focus();
+                return;
+            }
+
+            
+            try
+            {
+                Convert.ToByte(nudFrequencia.Value);
+            }
+            catch
+            {
+                MessageBox.Show("Insira uma quantidade de faltas válidas");
+                nudFrequencia.Focus();
+            }
+            if (nudFrequencia.Value > 200)
+            {
+                MessageBox.Show("O ano letivo tem apenas 200 dias");
+                nudFrequencia.Focus();
+                return;
+            }
+
+            
+            if (string.IsNullOrEmpty(txtNota1.Text.Replace(",", "").Replace(" ", "")))
+            {
+                MessageBox.Show("Nota 1 deve ser preenchida");
+                txtNota1.Focus();
+                return;
+            }
+            if (Convert.ToDouble(txtNota1.Text) < 0)
+            {
+                MessageBox.Show("Nota 1 deve ser maior que 0");
+                txtNota1.Focus();
+                return;
+            }
+            if (Convert.ToDouble(txtNota1.Text) > 10)
+            {
+                MessageBox.Show("Nota 1 deve ser menor que 10");
+                txtNota1.Focus();
+                return;
+            }
+
+            
+            if (string.IsNullOrEmpty(txtNota2.Text.Replace(",", "").Replace(" ", "")))
+            {
+                MessageBox.Show("Nota 2 deve ser preenchida");
+                txtNota2.Focus();
+                return;
+            }
+            if (Convert.ToDouble(txtNota2.Text) < 0)
+            {
+                MessageBox.Show("Nota 2 deve ser maior que 0");
+                txtNota2.Focus();
+                return;
+            }
+            if (Convert.ToDouble(txtNota2.Text) > 10)
+            {
+                MessageBox.Show("Nota 2 deve ser menor ou igual 10");
+                txtNota2.Focus();
+                return;
+            }
+
+            
+            if (string.IsNullOrEmpty(txtNota3.Text.Replace(",", "").Replace(" ", "")))
+            {
+                MessageBox.Show("Nota 3 deve ser preenchida");
+                txtNota3.Focus();
+                return;
+            }
+            if (Convert.ToDouble(txtNota3.Text) < 0)
+            {
+                MessageBox.Show("Nota 3 deve ser maior que 0");
+                txtNota3.Focus();
+                return;
+            }
+            if (Convert.ToDouble(txtNota3.Text) > 10)
+            {
+                MessageBox.Show("Nota 3 deve ser menor ou igual 10");
+                txtNota3.Focus();
+                return;
+            }
+
             aluno.Nome = txtNome.Text;
             aluno.CodigoMatricula = txtCodigoMatricula.Text;
             aluno.Frequencia = Convert.ToByte(nudFrequencia.Value);
@@ -104,16 +243,18 @@ namespace CadastroAlunos
                     }
                     else
                     {
-                        MessageBox.Show("O registro não existe");
+                        MessageBox.Show("Registro não encontrado");
                         txtCodigo.Focus();
-                        txtCodigo.SelectionStart = 0; // Seleciona o texto
+                        txtCodigo.SelectionStart = 0;
                         txtCodigo.SelectionLength = txtCodigo.Text.Length;
                     }
                 }
-                catch (NotFiniteNumberException ex)
+                catch
                 {
                     MessageBox.Show("Digite um código válido");
                     txtCodigo.Focus();
+                    txtCodigo.SelectionStart = 0;
+                    txtCodigo.SelectionLength = txtCodigo.Text.Length;
                 }
             }
         }
@@ -158,23 +299,32 @@ namespace CadastroAlunos
         private void SituacaoDoAluno()
         {
             double media = Convert.ToDouble(lblMedia.Text);
-            if (media < 5)
+            double frequencia = Convert.ToDouble(lblFrequencia.Text.Replace("%", ""));
+
+            if (frequencia >= 65)
             {
-                lblSituacaoAluno.Text = "Reprovado";
+                if (media < 5)
+                {
+                    lblSituacaoAluno.Text = "Reprovado";
+                }
+                if ((media >= 5) && (media < 7))
+                {
+                    lblSituacaoAluno.Text = "Recuperação";
+                }
+                if (media >= 7)
+                {
+                    lblSituacaoAluno.Text = "Aprovado";
+                }
             }
-            if ((media >= 5) && (media < 7))
+            if (frequencia < 65)
             {
-                lblSituacaoAluno.Text = "Recuperação";
-            }
-            if (media >= 7)
-            {
-                lblSituacaoAluno.Text = "Aprovado";
+                lblSituacaoAluno.Text = "Reprovado por frequência";
             }
         }
 
         private void txtNota1_Leave(object sender, EventArgs e)
         {
-            if (Convert.ToDouble(txtNota1.Text) >= 10)
+            if (Convert.ToDouble(txtNota1.Text) > 10)
             {
                 MessageBox.Show("Nota 1 deve ser menor ou igual 10");
                 txtNota1.Focus();
@@ -189,7 +339,7 @@ namespace CadastroAlunos
 
         private void txtNota2_Leave(object sender, EventArgs e)
         {
-            if (Convert.ToDouble(txtNota2.Text) >= 10)
+            if (Convert.ToDouble(txtNota2.Text) > 10)
             {
                 MessageBox.Show("Nota 2 deve ser menor ou igual 10");
                 txtNota2.Focus();
@@ -203,7 +353,7 @@ namespace CadastroAlunos
 
         private void txtNota3_Leave(object sender, EventArgs e)
         {
-            if (Convert.ToDouble(txtNota3.Text) >= 10)
+            if (Convert.ToDouble(txtNota3.Text) > 10)
             {
                 MessageBox.Show("Nota 3 deve ser menor ou igual 10");
                 txtNota3.Focus();
@@ -214,6 +364,12 @@ namespace CadastroAlunos
             CalcularMediaDoAluno();
             SituacaoDoAluno();
         }
- 
+
+        private void nudFrequencia_Leave(object sender, EventArgs e)
+        {
+            byte frequencia = Convert.ToByte(nudFrequencia.Value);
+            double percentualDeFaltas = ((((frequencia * 100) / 200) - 100.00) * -1);
+            lblFrequencia.Text = String.Format("{0:n}%", percentualDeFaltas);
+        }
     }
 }

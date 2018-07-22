@@ -18,3 +18,14 @@ C:\Users\104895\Documents\GitHub\Lista07BancoDadosWFA\CadastroAlunos\obj\Debug\C
 C:\Users\104895\Documents\GitHub\Lista07BancoDadosWFA\CadastroAlunos\obj\Debug\CadastroAlunos.ListaAlunos.resources
 C:\Users\104895\Documents\GitHub\Lista07BancoDadosWFA\CadastroAlunos\obj\Debug\CadastroAlunos.Properties.Resources.resources
 C:\Users\104895\Documents\GitHub\Lista07BancoDadosWFA\CadastroAlunos\obj\Debug\CadastroAlunos.csproj.GenerateResource.Cache
+C:\Users\Usuario\Documents\GitHub\Lista07BancoDadosWFA\CadastroAlunos\bin\Debug\CadastroAlunos.exe.config
+C:\Users\Usuario\Documents\GitHub\Lista07BancoDadosWFA\CadastroAlunos\bin\Debug\CadastroAlunos.exe
+C:\Users\Usuario\Documents\GitHub\Lista07BancoDadosWFA\CadastroAlunos\bin\Debug\CadastroAlunos.pdb
+C:\Users\Usuario\Documents\GitHub\Lista07BancoDadosWFA\CadastroAlunos\obj\Debug\CadastroAlunos.csprojAssemblyReference.cache
+C:\Users\Usuario\Documents\GitHub\Lista07BancoDadosWFA\CadastroAlunos\obj\Debug\CadastroAlunos.CadastroAlunos.resources
+C:\Users\Usuario\Documents\GitHub\Lista07BancoDadosWFA\CadastroAlunos\obj\Debug\CadastroAlunos.ListaAlunos.resources
+C:\Users\Usuario\Documents\GitHub\Lista07BancoDadosWFA\CadastroAlunos\obj\Debug\CadastroAlunos.Properties.Resources.resources
+C:\Users\Usuario\Documents\GitHub\Lista07BancoDadosWFA\CadastroAlunos\obj\Debug\CadastroAlunos.csproj.GenerateResource.cache
+C:\Users\Usuario\Documents\GitHub\Lista07BancoDadosWFA\CadastroAlunos\obj\Debug\CadastroAlunos.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\Documents\GitHub\Lista07BancoDadosWFA\CadastroAlunos\obj\Debug\CadastroAlunos.exe
+C:\Users\Usuario\Documents\GitHub\Lista07BancoDadosWFA\CadastroAlunos\obj\Debug\CadastroAlunos.pdb

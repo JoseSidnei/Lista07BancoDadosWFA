@@ -11,7 +11,7 @@ namespace CadastroAlunos.Repositorio
 {
     class AlunoRepositorio
     {
-        private string connectionString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename=C:\Users\104895\Documents\ListaExerciciosBancoDadosWFA.mdf;Integrated Security=True;Connect Timeout=30";
+        private string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Usuario\Documents\ExercicioBancoDadosWFA.mdf;Integrated Security=True;Connect Timeout=30";
         private SqlConnection connection = null;
 
         public AlunoRepositorio()
